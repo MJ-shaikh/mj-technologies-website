@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MJ Technologies - IT Services and Tolling Operations Solutions">
+    <title>MJ Technologies</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        header { background-color: #333; color: #fff; padding: 20px; text-align: center; }
+        footer { background-color: #333; color: white; padding: 10px; text-align: center; }
+        section { padding: 20px; text-align: center; }
+        nav a { color: #fff; padding: 14px 20px; text-decoration: none; }
+        nav { background-color: #555; padding: 10px; text-align: center; }
+        img { max-width: 100%; height: auto; }
+        .services { display: flex; justify-content: center; flex-wrap: wrap; }
+        .service { margin: 10px; padding: 10px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 300px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MJ Technologies</h1>
+    <nav>
+        <a href="index.html">Home</a> | 
+        <a href="it-services.html">IT Services</a> | 
+        <a href="tolling-operations.html">Tolling Operations</a> | 
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Welcome to MJ Technologies</h2>
+    <p>At MJ Technologies, we specialize in providing innovative IT services and solutions to small and medium-sized businesses. Our mission is to enhance your operational efficiency and growth through technology.</p>
+    <img src="images/website-creation.jpg" alt="Website Creation" title="Website Creation Services">
+</section>
+
+<section>
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service">
+            <h3>IT Services</h3>
+            <p>We offer a wide range of IT services tailored to meet your business needs:</p>
+            <ul>
+                <li>Custom Web Design</li>
+                <li>Responsive & Mobile-Optimized Layouts</li>
+                <li>E-commerce Solutions</li>
+                <li>SEO Optimization</li>
+                <li>Content Management Systems (CMS)</li>
+            </ul>
+            <img src="images/it-services.jpg" alt="IT Services">
+        </div>
+
+        <div class="service">
+            <h3>Tolling Operations</h3>
+            <p>We provide advanced solutions for tolling operations, including:</p>
+            <ul>
+                <li>Weigh-In-Motion (WIM) Systems</li>
+                <li>Static Weighing Systems (SWM)</li>
+                <li>Toll Management Systems</li>
+                <li>Lane Controllers</li>
+                <li>Advanced Traffic Management Systems (ATMS)</li>
+            </ul>
+            <img src="images/tolling-operations.jpg" alt="Tolling Operations">
+        </div>
+
+        <div class="service">
+            <h3>Website Creation</h3>
+            <p>We specialize in designing professional, responsive websites for small and medium-sized businesses. Our services include:</p>
+            <ul>
+                <li>Custom Web Design</li>
+                <li>Responsive Layouts</li>
+                <li>SEO Optimization</li>
+                <li>Content Management Systems</li>
+            </ul>
+            <img src="images/website-creation.jpg" alt="Website Creation">
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or would like to discuss your project, feel free to reach out to us!</p>
+    <p>Phone: <strong>+91-8007493765</strong></p>
+    <p>Address: Gopankoppa, Hubli, Dharwad District, Karnataka, PIN 580023</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 MJ Technologies. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
