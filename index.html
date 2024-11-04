@@ -7,14 +7,15 @@
     <style>
         body { font-family: Arial, sans-serif; background-color: #eaeaea; }
         header { background-color: #333; color: #fff; padding: 20px; text-align: center; position: relative; }
-        footer { background-color: #333; color: white; padding: 10px; text-align: center; }
+        footer { background-color: #333; color: white; padding: 20px; text-align: center; }
         section { padding: 20px; text-align: center; }
         nav a { color: #fff; padding: 14px 20px; text-decoration: none; }
         nav { background-color: #555; padding: 10px; text-align: center; }
-        ul { text-align: left; display: inline-block; }
         img { max-width: 100%; height: auto; margin: 10px; }
         .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
         .logo { position: absolute; left: 20px; top: 20px; height: 60px; }
+        .template-section { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+        .template-section img { width: 300px; height: auto; margin: 10px; }
     </style>
 </head>
 <body>
@@ -32,18 +33,16 @@
 <section id="home" style="display: block;">
     <h2>Welcome to MJ Technologies</h2>
     <p>Your go-to solution for IT services and tolling operations.</p>
-    <h3>About Us</h3>
-    <p>MJ Technologies specializes in IT services and solutions, focusing on integrating IT systems to enhance business operations. Our expertise includes electronic toll systems, software testing, and quality evaluation.</p>
 </section>
 
-<section class="grid-container" id="template-section" style="display: block;">
+<div class="template-section" id="template-section">
     <img src="1.png" alt="Template 1">
     <img src="2.png" alt="Template 2">
     <img src="3.png" alt="Template 3">
     <img src="4.png" alt="Template 4">
     <img src="5.png" alt="Template 5">
     <img src="6.png" alt="Template 6">
-</section>
+</div>
 
 <section id="it-services" style="display: none;">
     <h3>Our IT Services</h3>
@@ -63,6 +62,8 @@
 
 <footer>
     <p>&copy; 2024 MJ Technologies. All Rights Reserved.</p>
+    <h3>About Us</h3>
+    <p>MJ Technologies specializes in IT services and solutions, focusing on integrating IT systems to enhance business operations. Our expertise includes electronic toll systems, software testing, and quality evaluation.</p>
 </footer>
 
 <script>
@@ -75,7 +76,7 @@
         // Show the selected section
         if (sectionId === 'home') {
             document.getElementById('home').style.display = 'block';
-            document.getElementById('template-section').style.display = 'grid'; // Show templates
+            document.getElementById('template-section').style.display = 'flex'; // Show templates
         } else {
             document.getElementById('template-section').style.display = 'none'; // Hide templates
             document.getElementById(sectionId).style.display = 'block';
