@@ -6,61 +6,56 @@
     <title>MJ Technologies</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #eaeaea; }
-        header { background-color: #333; color: #fff; padding: 20px; text-align: center; }
+        header { background-color: #333; color: #fff; padding: 20px; text-align: center; position: relative; }
         footer { background-color: #333; color: white; padding: 10px; text-align: center; }
         section { padding: 20px; text-align: center; }
         nav a { color: #fff; padding: 14px 20px; text-decoration: none; }
         nav { background-color: #555; padding: 10px; text-align: center; }
         ul { text-align: left; display: inline-block; }
         img { max-width: 100%; height: auto; margin: 10px; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .logo { position: absolute; left: 20px; top: 20px; height: 60px; }
     </style>
 </head>
 <body>
 <header>
+    <img src="company-logo.png" alt="MJ Technologies Logo" class="logo">
     <h1>MJ Technologies</h1>
     <nav>
-        <a href="index.html">Home</a> | 
-        <a href="it-services.html">IT Services</a> | 
-        <a href="tolling-operations.html">Tolling Operations</a> | 
-        <a href="#contact">Contact</a>
+        <a href="#home" onclick="showSection('home')">Home</a> | 
+        <a href="#it-services" onclick="showSection('it-services')">IT Services</a> | 
+        <a href="#tolling-operations" onclick="showSection('tolling-operations')">Tolling Operations</a> | 
+        <a href="#contact" onclick="showSection('contact')">Contact</a>
     </nav>
 </header>
 
-<section>
+<section id="home" style="display: block;">
     <h2>Welcome to MJ Technologies</h2>
     <p>Your go-to solution for IT services and tolling operations.</p>
     <h3>About Us</h3>
     <p>MJ Technologies specializes in IT services and solutions, focusing on integrating IT systems to enhance business operations. Our expertise includes electronic toll systems, software testing, and quality evaluation.</p>
 </section>
 
-<section>
-    <h3>Our Services</h3>
-    <ul>
-        <li><strong>IT Services:</strong> Design, engineering, and delivery of IT systems.</li>
-        <li><strong>Tolling Operations:</strong>
-            <ul>
-                <li>Weigh-In-Motion (WIM)</li>
-                <li>Static Weighing Management (SWM)</li>
-                <li>Toll Management Systems</li>
-                <li>Lane Controllers</li>
-                <li>Advanced Traffic Management Systems (ATMS)</li>
-            </ul>
-        </li>
-        <li><strong>Website Creation:</strong> Custom websites for small and medium-sized businesses, ensuring they are responsive and optimized for performance.</li>
-    </ul>
+<section class="grid-container" id="template-section" style="display: block;">
+    <img src="1.png" alt="Template 1">
+    <img src="2.png" alt="Template 2">
+    <img src="3.png" alt="Template 3">
+    <img src="4.png" alt="Template 4">
+    <img src="5.png" alt="Template 5">
+    <img src="6.png" alt="Template 6">
 </section>
 
-<section class="grid-container">
-    <img src="1.png" alt="Description of Image 1">
-    <img src="2.png" alt="Description of Image 2">
-    <img src="3.png" alt="Description of Image 3">
-    <img src="4.png" alt="Description of Image 4">
-    <img src="5.png" alt="Description of Image 5">
-    <img src="6.png" alt="Description of Image 6">
+<section id="it-services" style="display: none;">
+    <h3>Our IT Services</h3>
+    <p>Detailed description of IT services offered.</p>
 </section>
 
-<section id="contact">
+<section id="tolling-operations" style="display: none;">
+    <h3>Tolling Operations</h3>
+    <p>Information about tolling operations provided.</p>
+</section>
+
+<section id="contact" style="display: none;">
     <h3>Contact Us</h3>
     <p>Phone: <strong>+91-8007493765</strong></p>
     <p>Address: Gopankoppa, Hubli, Dharwad District, Karnataka, Pin: 580023</p>
@@ -71,16 +66,21 @@
 </footer>
 
 <script>
-    // Example of a simple navigation event listener
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', function(event) {
-            // Prevent default action for demonstration purposes
-            event.preventDefault();
-            alert(`Navigating to ${this.textContent}`);
-            // Here, you can implement the logic to load new content dynamically
-            // or redirect to another page, depending on your requirements.
+    function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.display = 'none';
         });
-    });
+        
+        // Show the selected section
+        if (sectionId === 'home') {
+            document.getElementById('home').style.display = 'block';
+            document.getElementById('template-section').style.display = 'grid'; // Show templates
+        } else {
+            document.getElementById('template-section').style.display = 'none'; // Hide templates
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    }
 </script>
 
 </body>
