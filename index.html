@@ -70,5 +70,18 @@
     <p>&copy; 2024 MJ Technologies. All Rights Reserved.</p>
 </footer>
 
+<script>
+    // Example of a simple navigation event listener
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Prevent default action for demonstration purposes
+            event.preventDefault();
+            alert(`Navigating to ${this.textContent}`);
+            // Here, you can implement the logic to load new content dynamically
+            // or redirect to another page, depending on your requirements.
+        });
+    });
+</script>
+
 </body>
 </html>
