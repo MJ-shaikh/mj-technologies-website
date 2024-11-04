@@ -7,19 +7,19 @@
     <style>
         body { 
             font-family: Arial, sans-serif; 
-            background-color: #eaeaea; /* New background color */
+            background-color: #eaeaea; 
             margin: 0; 
         }
         header { 
             background-color: #333; 
             color: #fff; 
             padding: 20px; 
-            text-align: left; /* Align text to the left */
+            text-align: left; 
         }
         .logo { 
-            width: 100px; /* Adjust width as necessary */
-            float: left; /* Float logo to the left */
-            margin-right: 20px; /* Space between logo and text */
+            width: 100px; 
+            float: left; 
+            margin-right: 20px; 
         }
         footer { 
             background-color: #333; 
@@ -27,75 +27,68 @@
             padding: 10px; 
             text-align: center; 
         }
-        section { 
-            padding: 20px; 
+        nav { 
+            background-color: #555; 
+            padding: 10px; 
             text-align: center; 
-            clear: both; /* Clear floats */
         }
         nav a { 
             color: #fff; 
             padding: 14px 20px; 
             text-decoration: none; 
         }
-        nav a:hover { 
+        nav a.active { 
             background-color: #777; 
         }
-        nav { 
-            background-color: #555; 
-            padding: 10px; 
+        section { 
+            padding: 20px; 
             text-align: center; 
-        }
-        ul { 
-            text-align: left; 
-            display: inline-block; 
+            display: none; /* Hide sections by default */
         }
         img { 
             max-width: 100%; 
             height: auto; 
-            margin: 10px 0; /* Add some margin for spacing */
+            margin: 10px 0; 
         }
+        #home { display: block; } /* Show home section by default */
     </style>
 </head>
 <body>
 <header>
     <img src="company-logo.png" alt="MJ Technologies Logo" class="logo">
     <h1 style="display: inline-block;">MJ Technologies</h1>
-    <nav>
-        <a href="index.html">Home</a> | 
-        <a href="it-services.html">IT Services</a> | 
-        <a href="tolling-operations.html">Tolling Operations</a> | 
-        <a href="#contact">Contact</a>
-    </nav>
 </header>
 
-<section>
+<nav>
+    <a href="#" class="active" onclick="showSection('home')">Home</a> | 
+    <a href="#" onclick="showSection('it-services')">IT Services</a> | 
+    <a href="#" onclick="showSection('tolling-operations')">Tolling Operations</a> | 
+    <a href="#" onclick="showSection('contact')">Contact</a>
+</nav>
+
+<section id="home">
     <h2>Welcome to MJ Technologies</h2>
     <p>Your go-to solution for IT services and tolling operations.</p>
     <h3>About Us</h3>
     <p>MJ Technologies specializes in IT services and solutions, focusing on integrating IT systems to enhance business operations. Our expertise includes electronic toll systems, software testing, and quality evaluation.</p>
 </section>
 
-<section>
-    <h3>Our Services</h3>
-    <ul>
-        <li><strong>IT Services:</strong> Design, engineering, and delivery of IT systems.</li>
-        <li><strong>Tolling Operations:</strong>
-            <ul>
-                <li>Weigh-In-Motion (WIM)</li>
-                <li>Static Weighing Management (SWM)</li>
-                <li>Toll Management Systems</li>
-                <li>Lane Controllers</li>
-                <li>Advanced Traffic Management Systems (ATMS)</li>
-            </ul>
-        </li>
-        <li><strong>Website Creation:</strong> Custom websites for small and medium-sized businesses, ensuring they are responsive and optimized for performance.</li>
-    </ul>
+<section id="it-services">
+    <h3>Our IT Services</h3>
+    <p><strong>IT Services:</strong> Design, engineering, and delivery of IT systems.</p>
+    <img src="https://github.com/MJ-shaikh/mj-technologies-website/blob/main/it-services.jpg?raw=true" alt="IT Services overview">
 </section>
 
-<section>
-    <img src="https://github.com/MJ-shaikh/mj-technologies-website/blob/main/it-services.jpg?raw=true" alt="IT Services overview" width="500" height="400">
-    <img src="https://github.com/MJ-shaikh/mj-technologies-website/blob/main/website-creation.jpg?raw=true" alt="Website Creation for small and medium-sized businesses" width="500" height="400">
-    <img src="https://github.com/MJ-shaikh/mj-technologies-website/blob/main/tolling-operations.jpg?raw=true" alt="Fastag Operations overview" width="500" height="400">
+<section id="tolling-operations">
+    <h3>Tolling Operations</h3>
+    <ul>
+        <li>Weigh-In-Motion (WIM)</li>
+        <li>Static Weighing Management (SWM)</li>
+        <li>Toll Management Systems</li>
+        <li>Lane Controllers</li>
+        <li>Advanced Traffic Management Systems (ATMS)</li>
+    </ul>
+    <img src="https://github.com/MJ-shaikh/mj-technologies-website/blob/main/tolling-operations.jpg?raw=true" alt="Fastag Operations overview">
 </section>
 
 <section id="contact">
@@ -107,6 +100,28 @@
 <footer>
     <p>&copy; 2024 MJ Technologies. All Rights Reserved.</p>
 </footer>
+
+<script>
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+
+        // Remove active class from all nav links
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Show the selected section
+        document.getElementById(sectionId).style.display = 'block';
+
+        // Set the clicked nav link as active
+        event.target.classList.add('active');
+    }
+</script>
 
 </body>
 </html>
