@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-    <img src="company-logo.png" alt="MJ Technologies Logo" style="height: 50px; margin-right: 20px; vertical-align: left;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,57 +7,47 @@
     <style>
         /* Basic styling */
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-        header { background-color: #003366; color: #fff; padding: 40px 20px; text-align: center; }
-        header h1 { font-size: 3em; color: #FFCC00; }
+        header { background-color: #003366; color: #fff; padding: 20px; text-align: center; display: flex; align-items: center; justify-content: center; }
+        header h1 { font-size: 3em; color: #FFCC00; display: inline; margin: 0 20px; }
         footer { background-color: #003366; color: white; padding: 20px; text-align: center; font-size: 0.9em; }
-        section { padding: 20px; text-align: center; display: none; }
+        section { padding: 20px; text-align: center; }
 
         /* Navigation bar styling */
         nav { background-color: #005580; padding: 10px; text-align: center; margin-bottom: 20px; }
         nav a { color: #fff; padding: 10px 15px; text-decoration: none; font-weight: bold; font-size: 1.1em; }
         nav a:hover { background-color: #FFCC00; color: #003366; border-radius: 5px; }
-
-        /* Home welcome text animation */
-        .welcome { font-size: 1.5em; font-weight: bold; animation: floatHorizontal 20s linear infinite; color: #003366; }
-        @keyframes floatHorizontal { from { transform: translateX(0); } to { transform: translateX(100px); } }
-
-        /* Template styling */
+        
+        /* Template styling in Home section */
         .template-section { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
         .template { width: 800px; margin: 20px 0; animation: floatVertical 5s ease-in-out infinite alternate; }
         @keyframes floatVertical { from { transform: translateY(0); } to { transform: translateY(-10px); } }
-
-        /* Form styling */
+        
+        /* Enquiry form styling */
         .form-group { margin: 10px 0; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
         .form-group input, .form-group textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
         .form-submit { padding: 10px 20px; background-color: #003366; color: white; border: none; cursor: pointer; border-radius: 5px; }
-
-        /* Grid box styling for sections */
-        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .grid-box { background-color: #e6f7ff; border: 1px solid #005580; border-radius: 8px; padding: 20px; width: 200px; text-align: center; }
-        .grid-box img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
-
-        /* Thank you message styling */
-        .thank-you { font-weight: bold; color: #005580; margin-top: 20px; }
     </style>
 </head>
 <body>
 <header>
+    <img src="company-logo.png" alt="MJ Technologies Logo" style="height: 100px; margin-right: 20px;">
     <h1>MJ Technologies</h1>
-    <nav>
-        <a href="#home" onclick="showSection('home')">Home</a> | 
-        <a href="#about" onclick="showSection('about')">About Us</a> | 
-        <a href="#it-services" onclick="showSection('it-services')">IT Services</a> | 
-        <a href="#tolling-operations" onclick="showSection('tolling-operations')">Tolling Operations</a> | 
-        <a href="#contact" onclick="showSection('contact')">Contact</a> | 
-        <a href="#enquiry" onclick="showSection('enquiry')">Enquiry</a>
-    </nav>
 </header>
 
-<section id="home" style="display: block;">
-    <h2 class="welcome">Welcome to MJ Technologies</h2>
-    <p>Your go-to solution for IT services and tolling operations.</p>
+<nav>
+    <a href="#home" onclick="showSection('home')">Home</a> | 
+    <a href="#about" onclick="showSection('about')">About Us</a> | 
+    <a href="#it-services" onclick="showSection('it-services')">IT Services</a> | 
+    <a href="#tolling-operations" onclick="showSection('tolling-operations')">Tolling Operations</a> | 
+    <a href="#contact" onclick="showSection('contact')">Contact</a> | 
+    <a href="#enquiry" onclick="showSection('enquiry')">Enquiry</a>
+</nav>
 
+<section id="home" style="display: block;">
+    <h2>Welcome to MJ Technologies</h2>
+    <p>Your go-to solution for IT services and tolling operations.</p>
+    
     <!-- Templates Section in Home -->
     <div class="template-section">
         <img src="1.png" alt="Template 1" class="template">
@@ -71,60 +59,40 @@
     </div>
 </section>
 
-<section id="about">
+<section id="about" style="display: none;">
     <h3>About Us</h3>
-    <p>At MJ Technologies, we are pioneers in delivering top-notch IT solutions and tolling systems that drive efficiency, reliability, and innovation on highways and in the corporate sector. Our team specializes in advanced toll collection, Weigh-in-Motion systems, and customized IT services to meet the unique demands of small and medium businesses. With a strong commitment to quality and excellence, MJ Technologies is your trusted partner for technological advancements that shape the future.</p>
+    <p>MJ Technologies is an industry leader in IT services, specializing in electronic toll systems, system integration, and Weigh-In-Motion systems. Our expertise in technology and operations ensures top-quality service and innovation for our clients.</p>
 </section>
 
-<section id="it-services">
+<section id="it-services" style="display: none;">
     <h3>Our IT Services</h3>
-    <div class="grid">
-        <div class="grid-box">
-            <img src="it-services.jpg" alt="IT Services">
-            <h4>System Design</h4>
-            <p>Offering comprehensive design solutions tailored to your unique requirements, ensuring scalable and efficient infrastructure.</p>
-        </div>
-        <div class="grid-box">
-            <img src="it-services.jpg" alt="Engineering">
-            <h4>Engineering</h4>
-            <p>Our engineering solutions focus on seamless integration and performance to maximize system productivity and reliability.</p>
-        </div>
-        <div class="grid-box">
-            <img src="it-services.jpg" alt="Delivery">
-            <h4>Delivery</h4>
-            <p>We deliver high-quality, ready-to-implement solutions that meet the operational needs of your business.</p>
-        </div>
-    </div>
+    <p>Our IT services include:</p>
+    <ul>
+        <li>System Design: Tailoring solutions to meet specific industry requirements.</li>
+        <li>Engineering: Building resilient and scalable IT infrastructures.</li>
+        <li>Delivery: Ensuring on-time project completion and deployment.</li>
+    </ul>
+    <img src="it-services.jpg" alt="IT Services" style="width: 300px;">
 </section>
 
-<section id="tolling-operations">
+<section id="tolling-operations" style="display: none;">
     <h3>Tolling Operations</h3>
-    <div class="grid">
-        <div class="grid-box">
-            <img src="tolling-operations.jpg" alt="Electronic Toll Collection">
-            <h4>Electronic Toll Collection</h4>
-            <p>Efficient and contactless toll collection systems designed to reduce congestion and improve traffic flow on highways.</p>
-        </div>
-        <div class="grid-box">
-            <img src="tolling-operations.jpg" alt="Weigh-In-Motion Systems">
-            <h4>Weigh-In-Motion Systems</h4>
-            <p>Advanced WIM systems provide real-time data for monitoring and regulating vehicle weights on highways.</p>
-        </div>
-        <div class="grid-box">
-            <img src="tolling-operations.jpg" alt="Toll Management Systems">
-            <h4>Toll Management Systems</h4>
-            <p>Our toll management solutions streamline operations and enhance revenue collection for highway operators.</p>
-        </div>
-    </div>
+    <p>Our tolling operations cover a wide range of services, including:</p>
+    <ul>
+        <li>Electronic Toll Collection: Efficient and reliable toll collection systems.</li>
+        <li>Weigh-In-Motion Systems: Accurate vehicle weight measurement without stopping.</li>
+        <li>Toll Management Systems: End-to-end management of toll operations with integrated analytics.</li>
+    </ul>
+    <img src="tolling-operations.jpg" alt="Tolling Operations" style="width: 300px;">
 </section>
 
-<section id="contact">
+<section id="contact" style="display: none;">
     <h3>Contact Us</h3>
     <p>Phone: <strong>+91-8007493765</strong></p>
     <p>Address: Gopankoppa, Hubli, Dharwad District, Karnataka, Pin: 580023</p>
 </section>
 
-<section id="enquiry">
+<section id="enquiry" style="display: none;">
     <h3>Enquiry Form</h3>
     <form onsubmit="submitForm(event)">
         <div class="form-group">
@@ -140,14 +108,11 @@
             <input type="tel" id="phone" name="phone" required>
         </div>
         <div class="form-group">
-            <label for="message">Query:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="query">Query:</label>
+            <textarea id="query" name="query" rows="4" required></textarea>
         </div>
         <button type="submit" class="form-submit">Submit Enquiry</button>
     </form>
-    <div id="thankYouMessage" class="thank-you" style="display: none;">
-        Thank you for contacting us. One of our representatives will attend to you shortly. Thanks once again from MJ Technologies. Good day!
-    </div>
 </section>
 
 <footer>
@@ -155,5 +120,15 @@
 </footer>
 
 <script>
-    // Function to switch between sections
-    function showSection(sectionId
+    function showSection(sectionId) {
+        document.querySelectorAll('section').forEach(section => section.style.display = 'none');
+        document.getElementById(sectionId).style.display = 'block';
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+        alert("Thank you for contacting us. One of our representatives will attend to you shortly.\n\nThank you once again from MJ Technologies - Good day.");
+    }
+</script>
+</body>
+</html>
