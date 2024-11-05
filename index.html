@@ -1,3 +1,5 @@
+Here's the updated HTML structure based on your instructions. I've added large template images for visibility, updated the "IT Services" and "Tolling Operations" sections with images and descriptions, included an "About Us" tab with impactful content, and added a slow horizontal floating animation for the welcome message.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,17 +18,26 @@
         nav { background-color: #005580; padding: 10px; text-align: center; margin-bottom: 20px; }
         nav a { color: #fff; padding: 10px 15px; text-decoration: none; font-weight: bold; font-size: 1.1em; }
         nav a:hover { background-color: #FFCC00; color: #003366; border-radius: 5px; }
-        
-        /* Template styling in Home section */
+
+        /* Home welcome text animation */
+        .welcome { font-size: 1.5em; font-weight: bold; animation: floatHorizontal 20s linear infinite; color: #003366; }
+        @keyframes floatHorizontal { from { transform: translateX(0); } to { transform: translateX(100px); } }
+
+        /* Template styling */
         .template-section { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
-        .template { width: 400px; margin: 20px 0; animation: floatVertical 5s ease-in-out infinite alternate; }
+        .template { width: 500px; margin: 20px 0; animation: floatVertical 5s ease-in-out infinite alternate; }
         @keyframes floatVertical { from { transform: translateY(0); } to { transform: translateY(-10px); } }
-        
-        /* Enquiry form styling */
+
+        /* Form styling */
         .form-group { margin: 10px 0; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
         .form-group input, .form-group textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
         .form-submit { padding: 10px 20px; background-color: #003366; color: white; border: none; cursor: pointer; border-radius: 5px; }
+
+        /* Grid box styling for sections */
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .grid-box { background-color: #e6f7ff; border: 1px solid #005580; border-radius: 8px; padding: 20px; width: 200px; text-align: center; }
+        .grid-box img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -34,6 +45,7 @@
     <h1>MJ Technologies</h1>
     <nav>
         <a href="#home" onclick="showSection('home')">Home</a> | 
+        <a href="#about" onclick="showSection('about')">About Us</a> | 
         <a href="#it-services" onclick="showSection('it-services')">IT Services</a> | 
         <a href="#tolling-operations" onclick="showSection('tolling-operations')">Tolling Operations</a> | 
         <a href="#contact" onclick="showSection('contact')">Contact</a> | 
@@ -42,35 +54,62 @@
 </header>
 
 <section id="home" style="display: block;">
-    <h2>Welcome to MJ Technologies</h2>
+    <h2 class="welcome">Welcome to MJ Technologies</h2>
     <p>Your go-to solution for IT services and tolling operations.</p>
-    
+
     <!-- Templates Section in Home -->
     <div class="template-section">
         <img src="1.png" alt="Template 1" class="template">
         <img src="2.png" alt="Template 2" class="template">
         <img src="3.png" alt="Template 3" class="template">
         <img src="4.png" alt="Template 4" class="template">
-        <img src="5.png" alt="Template 5" class="template">
-        <img src="6.png" alt="Template 6" class="template">
     </div>
+</section>
+
+<section id="about" style="display: none;">
+    <h3>About Us</h3>
+    <p>At MJ Technologies, we are pioneers in delivering top-notch IT solutions and tolling systems that drive efficiency, reliability, and innovation on highways and in the corporate sector. Our team specializes in advanced toll collection, Weigh-in-Motion systems, and customized IT services to meet the unique demands of small and medium businesses. With a strong commitment to quality and excellence, MJ Technologies is your trusted partner for technological advancements that shape the future.</p>
 </section>
 
 <section id="it-services" style="display: none;">
     <h3>Our IT Services</h3>
     <div class="grid">
-        <div class="grid-box">System Design</div>
-        <div class="grid-box">Engineering</div>
-        <div class="grid-box">Delivery</div>
+        <div class="grid-box">
+            <img src="it-services.jpg" alt="IT Services">
+            <h4>System Design</h4>
+            <p>Offering comprehensive design solutions tailored to your unique requirements, ensuring scalable and efficient infrastructure.</p>
+        </div>
+        <div class="grid-box">
+            <img src="it-services.jpg" alt="Engineering">
+            <h4>Engineering</h4>
+            <p>Our engineering solutions focus on seamless integration and performance to maximize system productivity and reliability.</p>
+        </div>
+        <div class="grid-box">
+            <img src="it-services.jpg" alt="Delivery">
+            <h4>Delivery</h4>
+            <p>We deliver high-quality, ready-to-implement solutions that meet the operational needs of your business.</p>
+        </div>
     </div>
 </section>
 
 <section id="tolling-operations" style="display: none;">
     <h3>Tolling Operations</h3>
     <div class="grid">
-        <div class="grid-box">Electronic Toll Collection</div>
-        <div class="grid-box">Weigh-In-Motion Systems</div>
-        <div class="grid-box">Toll Management Systems</div>
+        <div class="grid-box">
+            <img src="tolling-operations.jpg" alt="Electronic Toll Collection">
+            <h4>Electronic Toll Collection</h4>
+            <p>Efficient and contactless toll collection systems designed to reduce congestion and improve traffic flow on highways.</p>
+        </div>
+        <div class="grid-box">
+            <img src="tolling-operations.jpg" alt="Weigh-In-Motion Systems">
+            <h4>Weigh-In-Motion Systems</h4>
+            <p>Advanced WIM systems provide real-time data for monitoring and regulating vehicle weights on highways.</p>
+        </div>
+        <div class="grid-box">
+            <img src="tolling-operations.jpg" alt="Toll Management Systems">
+            <h4>Toll Management Systems</h4>
+            <p>Our toll management solutions streamline operations and enhance revenue collection for highway operators.</p>
+        </div>
     </div>
 </section>
 
@@ -110,13 +149,14 @@
 <script>
     function showSection(sectionId) {
         document.querySelectorAll('section').forEach(section => section.style.display = 'none');
-        document.getElementById(sectionId).style.display = 'block';
+        const section = document.getElementById(sectionId);
+        section.style.display = 'block';
+        section.scrollIntoView({ behavior: 'smooth' });
     }
 
     function submitForm(event) {
         event.preventDefault();
         alert("Thank you for contacting us. Our representative will call you shortly.");
     }
-</script>
-</body>
-</html>
+</
+
