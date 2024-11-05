@@ -22,15 +22,12 @@
         .floating-text { font-size: 2.5em; color: #003366; position: relative; animation: floatHorizontal 20s linear infinite; }
         @keyframes floatHorizontal { 0% { left: -100%; } 50% { left: 50%; } 100% { left: 100%; } }
         
-        /* Service, tolling, contact, and enquiry grid styling */
-        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 600px; margin: 0 auto; }
-        .grid-box { background-color: #e3e3e3; padding: 20px; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); text-align: center; cursor: pointer; }
-        
-        /* Enquiry templates with floating effect */
-        .template { font-size: 1.2em; background: #eee; padding: 20px; border-radius: 8px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); animation: floatVertical 5s ease-in-out infinite alternate; }
+        /* Template images with floating effect */
+        .template-section { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+        .template { width: 400px; margin: 20px 0; animation: floatVertical 5s ease-in-out infinite alternate; }
         @keyframes floatVertical { from { transform: translateY(0); } to { transform: translateY(-10px); } }
 
-        /* Form and submit message */
+        /* Enquiry form styling */
         .form-group { margin: 10px 0; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
         .form-group input, .form-group textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
@@ -51,6 +48,16 @@
 <section id="home" style="display: block;">
     <h2 class="floating-text">Welcome to MJ Technologies</h2>
     <p>Your go-to solution for IT services and tolling operations.</p>
+    
+    <!-- Templates Section in Home -->
+    <div class="template-section">
+        <img src="1.png" alt="Template 1" class="template">
+        <img src="2.png" alt="Template 2" class="template">
+        <img src="3.png" alt="Template 3" class="template">
+        <img src="4.png" alt="Template 4" class="template">
+        <img src="5.png" alt="Template 5" class="template">
+        <img src="6.png" alt="Template 6" class="template">
+    </div>
 </section>
 
 <section id="it-services" style="display: none;">
@@ -90,17 +97,6 @@
 <section id="enquiry" style="display: none;">
     <h3>Enquiry Form</h3>
     <div class="content">
-        <div class="grid">
-            <div class="template" onclick="showTemplateDetails('Template A')">Template A</div>
-            <div class="template" onclick="showTemplateDetails('Template B')">Template B</div>
-            <div class="template" onclick="showTemplateDetails('Template C')">Template C</div>
-        </div>
-        <br>
-        <div id="template-details" style="display: none;">
-            <h4>Template Details</h4>
-            <p id="template-content"></p>
-        </div>
-        <br>
         <form onsubmit="submitForm(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -136,11 +132,6 @@
     function submitForm(event) {
         event.preventDefault();
         alert("Thank you for contacting us. Our representative will call you shortly.");
-    }
-
-    function showTemplateDetails(templateName) {
-        document.getElementById('template-details').style.display = 'block';
-        document.getElementById('template-content').innerText = `Details about ${templateName}`;
     }
 </script>
 </body>
