@@ -6,18 +6,57 @@
     <title>MJ Technologies</title>
     <style>
         /* Basic styling */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-        header { background-color: #003366; color: #fff; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
-        header h1 { font-size: 2em; color: #FFCC00; margin: 0 20px; white-space: nowrap; animation: scrollText 20s linear infinite; }
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(135deg, #f9f9f9, #c6d9f2, #a3c6f0, #87b2e6); /* Multi-palette background */
+        }
+        header {
+            background: linear-gradient(45deg, #003366, #005580, #FFCC00); /* Multi-palette header */
+            color: #fff; 
+            padding: 20px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+        }
+        header h1 {
+            font-size: 2em; 
+            color: #FFCC00; 
+            margin: 0 20px; 
+            white-space: nowrap; 
+            animation: scrollText 20s linear infinite;
+        }
         header img { height: 60px; margin-right: auto; }
 
-        footer { background-color: #003366; color: white; padding: 20px; text-align: center; font-size: 0.9em; }
-        section { padding: 20px; text-align: center; }
+        footer {
+            background-color: #003366;
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            font-size: 0.9em; 
+            background: linear-gradient(45deg, #003366, #005580, #FFCC00); /* Same palette for footer */
+        }
 
         /* Navigation bar styling */
-        nav { background-color: #005580; padding: 10px; text-align: center; margin-bottom: 20px; }
-        nav a { color: #fff; padding: 10px 15px; text-decoration: none; font-weight: bold; font-size: 1.1em; }
-        nav a:hover { background-color: #FFCC00; color: #003366; border-radius: 5px; }
+        nav {
+            background-color: #005580; 
+            padding: 10px; 
+            text-align: center; 
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: #fff; 
+            padding: 10px 15px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1.1em;
+        }
+        nav a:hover { 
+            background-color: #FFCC00; 
+            color: #003366; 
+            border-radius: 5px; 
+        }
 
         /* Floating welcome message */
         @keyframes scrollText {
@@ -26,19 +65,47 @@
         }
 
         /* Template styling in Home section */
-        .template-section { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
-        .template { width: 100%; max-width: 800px; margin: 20px 0; animation: floatVertical 5s ease-in-out infinite alternate; }
-        @keyframes floatVertical { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+        .template-section {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            margin-top: 20px;
+        }
+        .template {
+            width: 100%; 
+            max-width: 800px; 
+            margin: 20px 0; 
+            animation: floatVertical 5s ease-in-out infinite alternate;
+        }
+        @keyframes floatVertical { 
+            from { transform: translateY(0); } 
+            to { transform: translateY(-10px); } 
+        }
 
         /* Enquiry form styling */
         .form-group { margin: 10px 0; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
-        .form-submit { padding: 10px 20px; background-color: #003366; color: white; border: none; cursor: pointer; border-radius: 5px; }
+        .form-group input, .form-group textarea {
+            width: 100%; 
+            padding: 10px; 
+            border-radius: 5px; 
+            border: 1px solid #ccc; 
+        }
+        .form-submit { 
+            padding: 10px 20px; 
+            background-color: #003366; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 5px; 
+        }
 
         /* Responsive design */
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; }
+            header { 
+                flex-direction: column; 
+                text-align: center; 
+            }
             nav { font-size: 0.9em; }
             .template { width: 100%; }
         }
@@ -63,7 +130,6 @@
     <h2>Welcome to MJ Technologies</h2>
     <p>Your go-to solution for IT services and tolling operations.</p>
     
-    <!-- Templates Section in Home -->
     <div class="template-section">
         <img src="1.png" alt="Template 1" class="template">
         <img src="2.png" alt="Template 2" class="template">
