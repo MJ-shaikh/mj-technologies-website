@@ -23,7 +23,7 @@
 
         /* Template styling */
         .template-section { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
-        .template { width: 500px; margin: 20px 0; animation: floatVertical 5s ease-in-out infinite alternate; }
+        .template { width: 800px; margin: 20px 0; animation: floatVertical 5s ease-in-out infinite alternate; }
         @keyframes floatVertical { from { transform: translateY(0); } to { transform: translateY(-10px); } }
 
         /* Form styling */
@@ -61,6 +61,8 @@
         <img src="2.png" alt="Template 2" class="template">
         <img src="3.png" alt="Template 3" class="template">
         <img src="4.png" alt="Template 4" class="template">
+        <img src="5.png" alt="Template 5" class="template">
+        <img src="6.png" alt="Template 6" class="template">
     </div>
 </section>
 
@@ -149,11 +151,3 @@
         document.querySelectorAll('section').forEach(section => section.style.display = 'none');
         const section = document.getElementById(sectionId);
         section.style.display = 'block';
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function submitForm(event) {
-        event.preventDefault();
-        alert("Thank you for contacting us. Our representative will call you shortly.");
-    }
-</
