@@ -7,12 +7,12 @@
     <style>
         body { 
             font-family: Arial, sans-serif; 
-            background: linear-gradient(to right, #e3e3e3, #f5f5f5); /* Light background */
+            background: linear-gradient(to right, #e3e3e3, #f5f5f5);
             margin: 0;
             padding: 0;
         }
         header { 
-            background-color: #003366; /* Dark blue */
+            background-color: #003366; 
             color: #fff; 
             padding: 40px 20px;
             text-align: center; 
@@ -21,7 +21,7 @@
         }
         header h1 {
             font-size: 3em;
-            color: #FFCC00; /* Bright yellow color */
+            color: #FFCC00;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
             margin-top: 0;
         }
@@ -31,9 +31,6 @@
             padding: 20px; 
             text-align: center;
             font-size: 0.9em;
-        }
-        footer p.copy { 
-            font-size: 0.8em; /* Smaller font for copyright */
         }
         section { 
             padding: 20px; 
@@ -62,8 +59,8 @@
             font-size: 2.5em;
             color: #003366;
             position: relative;
-            animation: floatHorizontal 8s linear infinite; /* Slower speed */
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            animation: floatHorizontal 20s linear infinite;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
         }
         @keyframes floatHorizontal {
             0% { left: -100%; }
@@ -178,7 +175,7 @@
     <h3>Enquiry Form</h3>
     <div class="enquiry-grid">
         <div class="grid-box">
-            <form action="your-server-endpoint" method="post">
+            <form onsubmit="submitForm(event)">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -222,6 +219,11 @@
         } else {
             document.getElementById(sectionId).style.display = 'block';
         }
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+        alert("Thank you for contacting us. Our representative will call you shortly.");
     }
 </script>
 </body>
