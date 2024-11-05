@@ -62,7 +62,8 @@
             font-size: 2.5em;
             color: #003366;
             position: relative;
-            animation: floatHorizontal 5s linear infinite;
+            animation: floatHorizontal 8s linear infinite; /* Slower speed */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
         }
         @keyframes floatHorizontal {
             0% { left: -100%; }
@@ -88,6 +89,10 @@
             border-radius: 8px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .form-group {
             margin: 10px 0;
@@ -218,9 +223,4 @@
             document.getElementById(sectionId).style.display = 'block';
         }
         
-        document.querySelector(`nav a[href="#${sectionId}"]`).classList.add('active');
-    }
-</script>
-
-</body>
-</html>
+        document.querySelector
